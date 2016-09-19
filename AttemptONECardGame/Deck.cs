@@ -14,24 +14,24 @@ namespace AttemptONECardGame
 		// A name for an array of references to Playing Card objects.
 		// Each reference in this array will hold a reference 
 		// to one of the cards in a deck of cards.
-		private PlayingCard[] theDeck;
+		private Card[] theDeck;
 
 		public Deck()
 		{
-			theDeck = new PlayingCard[52];
+			theDeck = new Card[52];
 
 			for (int i = 0; i < 13; i++)
 			{
-				theDeck[i] = new PlayingCard(i + 2, Suit.HEARTS);
-				theDeck[i] = new PlayingCard(i + 2, Suit.SPADES);
-				theDeck[i] = new PlayingCard(i + 2, Suit.CLUBS);
-				theDeck[i] = new PlayingCard(i + 2, Suit.DIAMONDS);
+				theDeck[i] = new Card(i + 2, Suit.HEARTS);
+				theDeck[i] = new Card(i + 2, Suit.SPADES);
+				theDeck[i] = new Card(i + 2, Suit.CLUBS);
+				theDeck[i] = new Card(i + 2, Suit.DIAMONDS);
 			}
 		}
 		//shuffle
 		public void shuffle()
 		{
-			PlayingCard temp;
+			Card temp;
 			int j;
 
 			for (int i = 0; i < 52; i++)
