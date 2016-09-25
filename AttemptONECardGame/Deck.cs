@@ -22,21 +22,25 @@ namespace AttemptONECardGame
 
 			for (int i = 0; i < 13; i++)
 			{
-				theDeck[i] = new Card(i + 2, Suit.HEARTS);
-				theDeck[i] = new Card(i + 2, Suit.SPADES);
-				theDeck[i] = new Card(i + 2, Suit.CLUBS);
-				theDeck[i] = new Card(i + 2, Suit.DIAMONDS);
+				theDeck[i]   = new Card(i + 2, Suit.HEARTS);
+				theDeck[i+13] = new Card(i + 2, Suit.SPADES);
+				theDeck[i+26] = new Card(i + 2, Suit.CLUBS);
+				theDeck[i+39] = new Card(i + 2, Suit.DIAMONDS);
 			}
 		}
+
 		//shuffle
 		public void shuffle()
 		{
 			Card temp;
 			int j;
+			Random rand = new Random();
 
 			for (int i = 0; i < 52; i++)
 			{
-				j = (int)(Math.random() * 52);
+				//j = (int)(Math.Random() * 52);
+				j = rand.Next(52); 
+
 				temp = theDeck[i];
 				theDeck[i] = theDeck[j];
 				theDeck[j] = temp;
@@ -45,7 +49,7 @@ namespace AttemptONECardGame
 		//toString
 		public string toString()
 		{
-			String deckStr = " ";
+			string deckStr = " ";
 
 			for (int i = 0; i < 52; i++)
 			{

@@ -1,31 +1,55 @@
-﻿using System;
-namespace AttemptONECardGame
+﻿namespace AttemptONECardGame
 {
 	public class Card
 	{
 		private Rank theRank;
-		private Suit theSuit;
+		//private Suit theSuit;
+
 
 		public Card(int initRank, char initSuit)
 		{
 			theRank = new Rank(initRank);
 			theSuit = new Suit(initSuit);
 		}
+		public Card()
+		{
+
+		}
 		public int getRank()
 		{
 			return theRank.getRank();
 		}
-		public char getSuit()
+		public Suit theSuit { get; set; }
+
+		//Specify the behavior of get/set
+
+		public void ex()
 		{
-			return theSuit.getSuit();
+			NumThing = 2;
+			int d = NumThing;
 		}
+
+
+
+		public int NumThing
+		{
+			get
+			{
+				return NumThing = NumThing * 2;
+			}
+			set
+			{
+				NumThing = value;
+			}
+		}
+
 		public int compareRank(Card card)
 		{
 			return theRank.compareTo(card.theRank);
 		}
-		public string toString()
+		public virtual string toString()
 		{
-			return theRank.toString() + theSuit.toString();
+			return theRank + theSuit.ToString();
 		}
 
 	}

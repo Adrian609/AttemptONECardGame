@@ -11,7 +11,7 @@ namespace AttemptONECardGame
 		public const char SPADES = 'S';
 
 		public Suit(char initSuit)
-		{
+		{ 
 			suit = initSuit;
 		}
 		public char getSuit()
@@ -22,9 +22,10 @@ namespace AttemptONECardGame
 		{
 			return suit == compSuit.getSuit();
 		}
-		public string toString()
+		public virtual string toString()
 		{
-			return String.valueOf(suit);
+			//return suit.ToString();
+			return suit.ToString() + " of " + suit.ToString() + "s";
 		}
 	}
 }

@@ -25,7 +25,7 @@ namespace AttemptONECardGame
 		public const int JACK = 11;
 		public const int TEN = 10;
 		public const int NINE = 9;
-		public const int EIGHT = 8;
+		public const int EIGHT = 8;  
 		public const int SEVEN = 7;
 		public const int SIX = 6;
 		public const int FIVE = 5;
@@ -34,7 +34,8 @@ namespace AttemptONECardGame
 		public const int TWO = 2;
 
 
-		Rank(int initRank)
+
+		public Rank(int initRank)
 		{
 			rank = initRank;
 		}
@@ -58,7 +59,7 @@ namespace AttemptONECardGame
 				return 1;
 			}
 		}
-		public string toString()
+		public override string ToString()
 		{
 			switch (rank)
 			{
