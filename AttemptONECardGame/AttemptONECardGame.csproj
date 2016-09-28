@@ -43,6 +43,7 @@
     <Compile Include="CardCountHand.cs" />
     <Compile Include="BlackJackGame.cs" />
     <Compile Include="BlackJackHand.cs" />
+    <Compile Include="Hand.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
