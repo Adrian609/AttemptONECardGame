@@ -1,5 +1,4 @@
-﻿
-namespace AttemptONECardGame
+﻿namespace AttemptONECardGame
 {
 	public class BlackJackHand : Hand
 	{
