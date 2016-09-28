@@ -1,55 +1,48 @@
-﻿namespace AttemptONECardGame
+﻿using System;
+
+namespace AttemptONECardGame
 {
 	public class Card
 	{
-		private Rank theRank;
-		//private Suit theSuit;
+		public Suit mySuit;
+		public Rank myRank;
+		static Random rnd = new Random();
+		public int rndval = rnd.Next(0, 13);
+		public int rndval2 = rnd.Next(0, 3);
 
-
-		public Card(int initRank, char initSuit)
+		public Card(Suit newSuit, Rank newRank)
 		{
-			theRank = new Rank(initRank);
-			theSuit = new Suit(initSuit);
+			mySuit = newSuit;
+			myRank = newRank;
 		}
+
 		public Card()
 		{
-
-		}
-		public int getRank()
-		{
-			return theRank.getRank();
-		}
-		public Suit theSuit { get; set; }
-
-		//Specify the behavior of get/set
-
-		public void ex()
-		{
-			NumThing = 2;
-			int d = NumThing;
+			myRank = Rank.values[rndval];
+			mySuit = Suit.values[rndval2];
 		}
 
 
-
-		public int NumThing
+		public int CompareTo(Card newCard)
 		{
-			get
-			{
-				return NumThing = NumThing * 2;
-			}
-			set
-			{
-				NumThing = value;
-			}
+			return this.myRank.CompareTo(newCard.myRank);
 		}
 
-		public int compareRank(Card card)
+		public Rank GetRank()
 		{
-			return theRank.compareTo(card.theRank);
+			return myRank;
 		}
-		public virtual string toString()
+
+		public Suit GetSuit()
 		{
-			return theRank + theSuit.ToString();
+
+			return mySuit;
+		}
+
+		public override string ToString()
+		{
+			return "Rank is: " + myRank + " Suit is: " + mySuit;
+
 		}
 
 	}

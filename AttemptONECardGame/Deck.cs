@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace AttemptONECardGame
 {
 	//1. void AddCard(card): adds a card to the deck
@@ -11,51 +13,82 @@ namespace AttemptONECardGame
 
 	public class Deck
 	{
-		// A name for an array of references to Playing Card objects.
-		// Each reference in this array will hold a reference 
-		// to one of the cards in a deck of cards.
-		private Card[] theDeck;
+		public int deckSize;
+		public List<Card> deck;
+		Random rnd = new Random();
 
-		public Deck()
+		public Deck(int deckSize2)
 		{
-			theDeck = new Card[52];
+			deck = new List<Card> { };
+			deckSize = deckSize2;
+		}
 
-			for (int i = 0; i < 13; i++)
+		public void AddCard(Card newCard)
+		{
+			if (deck.Count < deckSize)
 			{
-				theDeck[i]   = new Card(i + 2, Suit.HEARTS);
-				theDeck[i+13] = new Card(i + 2, Suit.SPADES);
-				theDeck[i+26] = new Card(i + 2, Suit.CLUBS);
-				theDeck[i+39] = new Card(i + 2, Suit.DIAMONDS);
+				deck.Add(newCard);
+			}
+
+		}
+
+		public Card DealOne()
+		{
+			int rnd1 = rnd.Next(0, deck.Count);
+			Card temp = deck[rnd1];
+			deck.RemoveAt(rnd1);
+			return temp;
+		}
+
+		public int GetCardsRemaining()
+		{
+			return deck.Count;
+		}
+
+		public int GetDeckSize()
+		{
+
+			return deckSize;
+		}
+
+		public bool IsEmpty()
+		{
+			if (deck.Count == 0)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		public void Shuffle()
+		{
+			List<Card> temp = deck;
+			int temprnd;
+			int count = 0;
+
+			deck.Clear();
+
+			while (count <= temp.Count)
+			{
+				temprnd = rnd.Next(0, temp.Count);
+
+				if (!deck.Contains(temp[temprnd]))
+				{
+					this.AddCard(temp[temprnd]);
+					count++;
+				}
 			}
 		}
 
-		//shuffle
-		public void shuffle()
+		public void RestoreDeck()
 		{
 			Card temp;
-			int j;
-			Random rand = new Random();
 
-			for (int i = 0; i < 52; i++)
+			for (int i = deck.Count; i <= 52; i++)
 			{
-				//j = (int)(Math.Random() * 52);
-				j = rand.Next(52); 
-
-				temp = theDeck[i];
-				theDeck[i] = theDeck[j];
-				theDeck[j] = temp;
+				temp = new Card();
+				this.AddCard(temp);
 			}
-		}
-		//toString
-		public string toString()
-		{
-			string deckStr = " ";
-
-			for (int i = 0; i < 52; i++)
-			{
-				deckStr = deckStr + theDeck[i].toString() + " ";
-			}
-			return deckStr;
 		}
 	}
 }

@@ -11,9 +11,7 @@ namespace AttemptONECardGame
 			Greeting();
 			Card obj = new Card();
 
-			Console.WriteLine(obj.getRank().GetType() + " " + obj.theSuit);
-
-
+			Console.WriteLine("Rank:" + obj.GetSuit() + " Suite:" + obj.GetRank() + "Object To String " + obj.ToString());
 
 
 			Console.WriteLine("End!!!");

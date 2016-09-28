@@ -17,83 +17,100 @@ namespace AttemptONECardGame
 
 	public class Rank
 	{
-		private int rank;
-
-		public const int ACE = 14;
-		public const int KING = 13;
-		public const int QUEEN = 12;
-		public const int JACK = 11;
-		public const int TEN = 10;
-		public const int NINE = 9;
-		public const int EIGHT = 8;  
-		public const int SEVEN = 7;
-		public const int SIX = 6;
-		public const int FIVE = 5;
-		public const int FOUR = 4;
-		public const int THREE = 3;
-		public const int TWO = 2;
+		public string symbol;
+		public int val;
+		public string name;
 
 
+		public static Rank TWO = new Rank();
+		public static Rank THREE = new Rank();
+		public static Rank FOUR = new Rank();
+		public static Rank FIVE = new Rank();
+		public static Rank SIX = new Rank();
+		public static Rank SEVEN = new Rank();
+		public static Rank EIGHT = new Rank();
+		public static Rank NINE = new Rank();
+		public static Rank TEN = new Rank();
+		public static Rank JACK = new Rank();
+		public static Rank QUEEN = new Rank();
+		public static Rank KING = new Rank();
+		public static Rank ACE = new Rank();
 
-		public Rank(int initRank)
+		public static List<Rank> values = new List<Rank> { };
+
+		public Rank()
 		{
-			rank = initRank;
+
+
 		}
 
-		public int getRank()
+		public Rank(string ns, int nv, string nn)
 		{
-			return rank;
+			symbol = ns;
+			val = nv;
+			name = nn;
 		}
 
-		public int compareTo(Rank compRank)
+		static Rank()
 		{
-			if (rank < compRank.getRank())
+
+			TWO = new Rank("2", 2, "Two");
+			THREE = new Rank("3", 3, "Three");
+			FOUR = new Rank("4", 4, "Four");
+			FIVE = new Rank("5", 5, "Five");
+			SIX = new Rank("6", 6, "Six");
+			SEVEN = new Rank("7", 7, "Seven");
+			EIGHT = new Rank("8", 8, "Eight");
+			NINE = new Rank("9", 9, "Nine");
+			TEN = new Rank("10", 10, "Ten");
+			JACK = new Rank("J", 11, "Eleven");
+			QUEEN = new Rank("Q", 12, "Queen");
+			KING = new Rank("K", 13, "King");
+			ACE = new Rank("A", 14, "Ace");
+
+			values.Add(TWO);
+			values.Add(THREE);
+			values.Add(FOUR);
+			values.Add(FIVE);
+			values.Add(SIX);
+			values.Add(SEVEN);
+			values.Add(EIGHT);
+			values.Add(NINE);
+			values.Add(TEN);
+			values.Add(JACK);
+			values.Add(QUEEN);
+			values.Add(KING);
+			values.Add(ACE);
+		}
+
+		public int CompareTo(Rank rankObj)
+		{
+			if (this.val < rankObj.val)
 			{
 				return -1;
 			}
-			else if (rank == compRank.getRank())
+
+			if (this.val > rankObj.val)
 			{
-				return 0;
-			}
-			else {
 				return 1;
 			}
+			return 0;
 		}
+
+		public string GetSymbol()
+		{
+			return this.symbol;
+		}
+
+		public string GetName()
+		{
+
+			return this.name;
+		}
+
 		public override string ToString()
 		{
-			switch (rank)
-			{
-				case JACK:
-					return "J";
-				case QUEEN:
-					return "Q";
-				case KING:
-					return "K";
-				case ACE:
-					return "A";
-				case TEN:
-					return "10";
-				case NINE:
-					return "9";
-				case EIGHT:
-					return "8";
-				case SEVEN:
-					return "7";
-				case SIX:
-					return "6";
-				case FIVE:
-					return "5";
-				case FOUR:
-					return "4";
-				case THREE:
-					return "3";
-				case TWO:
-					return "2";
-				default:
-					return "Error: not a valid rank";
-			}
-
+			return this.name;
 		}
-
 	}
 }
