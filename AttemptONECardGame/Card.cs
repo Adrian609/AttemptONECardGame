@@ -18,8 +18,8 @@ namespace AttemptONECardGame
 
 		public Card()
 		{
-			myRank = Rank.values[rndval];
-			mySuit = Suit.values[rndval2];
+			myRank = Rank.VALUES[rndval];
+			mySuit = Suit.VALUES[rndval2];
 		}
 
 

@@ -1,14 +1,14 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 
 namespace AttemptONECardGame
 {
-	//Create a Rank class, which will specify the rank values for a standard deck of cards.
+	//Create a Rank class, which will specify the rank VALUES for a standard deck of cards.
 	//Ranks are established in the following ascending order: 2,3,4,5,6,7,8,9,10,J,Q,K,A.
 	//The class should define the following static fields:
 	//TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE.The
 	//class should also define a static field List<Rank>: VALUES, which lists all rank
-	//values in the deck. The following methods should be defined:
+	//VALUES in the deck. The following methods should be defined:
 
 	// 1. int CompareTo(Rank OtherRankObject): returns 0 if the ranks are the same, -1 if this object has a lower rank than the other object, 1 if this object has a higher rank than the other object.
 	// 2. string GetSymbol(): the symbol associated with the rank (e.g. Q)
@@ -36,7 +36,8 @@ namespace AttemptONECardGame
 		public static Rank KING = new Rank();
 		public static Rank ACE = new Rank();
 
-		public static List<Rank> values = new List<Rank> { };
+		public static List<Rank> VALUES = new List<Rank> { };
+
 
 		public Rank()
 		{
@@ -63,24 +64,24 @@ namespace AttemptONECardGame
 			EIGHT = new Rank("8", 8, "Eight");
 			NINE = new Rank("9", 9, "Nine");
 			TEN = new Rank("10", 10, "Ten");
-			JACK = new Rank("J", 11, "Eleven");
+			JACK = new Rank("J", 11, "Jack");
 			QUEEN = new Rank("Q", 12, "Queen");
 			KING = new Rank("K", 13, "King");
 			ACE = new Rank("A", 14, "Ace");
 
-			values.Add(TWO);
-			values.Add(THREE);
-			values.Add(FOUR);
-			values.Add(FIVE);
-			values.Add(SIX);
-			values.Add(SEVEN);
-			values.Add(EIGHT);
-			values.Add(NINE);
-			values.Add(TEN);
-			values.Add(JACK);
-			values.Add(QUEEN);
-			values.Add(KING);
-			values.Add(ACE);
+			VALUES.Add(TWO);
+			VALUES.Add(THREE);
+			VALUES.Add(FOUR);
+			VALUES.Add(FIVE);
+			VALUES.Add(SIX);
+			VALUES.Add(SEVEN);
+			VALUES.Add(EIGHT);
+			VALUES.Add(NINE);
+			VALUES.Add(TEN);
+			VALUES.Add(JACK);
+			VALUES.Add(QUEEN);
+			VALUES.Add(KING);
+			VALUES.Add(ACE);
 		}
 
 		public int CompareTo(Rank rankObj)

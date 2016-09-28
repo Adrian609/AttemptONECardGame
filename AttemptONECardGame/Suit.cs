@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 
 namespace AttemptONECardGame
@@ -13,7 +13,7 @@ namespace AttemptONECardGame
 		public static Suit HEARTS = new Suit();
 		public static Suit SPADES = new Suit();
 
-		public static List<Suit> values = new List<Suit> { };
+		public static List<Suit> VALUES = new List<Suit> { };
 
 		public Suit(string symbol2, string name2, int val2)
 		{
@@ -33,10 +33,10 @@ namespace AttemptONECardGame
 			Suit DIAMONDS = new Suit("D", "Diamond", 2);
 			Suit HEARTS = new Suit("H", "Hearts", 3);
 			Suit SPADES = new Suit("S", "Spades", 4);
-			values.Add(CLUBS);
-			values.Add(DIAMONDS);
-			values.Add(HEARTS);
-			values.Add(SPADES);
+			VALUES.Add(CLUBS);
+			VALUES.Add(DIAMONDS);
+			VALUES.Add(HEARTS);
+			VALUES.Add(SPADES);
 		}
 
 

@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 namespace AttemptONECardGame
 {
 	public abstract class Hand

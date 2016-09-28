@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 namespace AttemptONECardGame
 {
 	public class BlackJackHand : Hand
