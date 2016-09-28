@@ -3,6 +3,7 @@ namespace AttemptONECardGame
 {
 	public class BlackJackHand : Hand
 	{
+
 		public override int CompareTo(Hand otherHand)
 		{
 			if (this.EvaluateHand() > otherHand.EvaluateHand())

@@ -19,31 +19,41 @@ namespace AttemptONECardGame
 
 			//Player 1 
 			Console.WriteLine("Player 1 Hand");
-			int sum = 0;
 			//int total;
 			for (int i = 0; i < 7; i++)
 			{
 				Card rndCard = new Card();
 				player1.AddCard(new Card());
-				Console.WriteLine("- " + rndCard);
-				sum += rndCard.rndval;
-				Console.WriteLine(sum);
+				Console.WriteLine(i + "-" + rndCard);
 			}
-			Console.WriteLine("Player 1 total " + sum);
-			//Player 2
+
 			Console.WriteLine("Player 2 Hand");
 			for (int i = 0; i < 7; i++)
 			{
 				Card rndCard2 = new Card();
 				player2.AddCard(new Card());
-				Console.WriteLine("- " + rndCard2);
-				sum += rndCard2.rndval2;
-				Console.WriteLine(sum);
+				Console.WriteLine(i + "-" + rndCard2);
 
 			}
-			Console.WriteLine("Player 2 total " + sum);
-			Console.WriteLine("Evaluate Players hands");
-			player2.EvaluateHand().CompareTo(player1);
+
+			Console.WriteLine("Player1 " + player1.EvaluateHand()
+							  + "\nPlayer2 " + player2.EvaluateHand());
+
+			if (player1.EvaluateHand() > player2.EvaluateHand())
+			{
+				Console.WriteLine("Player 1 wins");
+			}
+			else if (player1.EvaluateHand() < player2.EvaluateHand())
+			{
+				Console.WriteLine("Player 2 wins");
+			}
+			else if (player1.EvaluateHand() == player2.EvaluateHand())
+			{
+				Console.WriteLine("Tie");
+			}
+			else {
+				Console.WriteLine("Try Again");
+			}
 
 		}
 
